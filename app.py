@@ -1,9 +1,15 @@
 from flask import Flask
 app = Flask(__name__)
 
+import os
+
+user    = os.environ.get('DATA_DB_USER')
+passwd  = os.environ.get('DATA_DB_PASS')
+host    = os.environ.get('DATA_DB_HOST')
+
 @app.route("/")
 def hello():
-    return "Hello nanobox!"
+    return os.environ.get('DATA_DB_PASS')
 
 
 if __name__ == "__main__":
